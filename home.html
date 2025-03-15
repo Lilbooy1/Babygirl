@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Our Magical Memories ✨</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(to bottom, #ffccff, #ff99cc);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: white;
+            font-size: 50px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px #ff0066;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px 10px #ff0066; }
+            to { text-shadow: 2px 2px 20px #ff3399; }
+        }
+
+        .cute-symbols {
+            font-size: 28px;
+            margin-bottom: 10px;
+            animation: sparkle 1.5s infinite alternate;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        .gallery-container {
+            max-width: 90%;
+            margin: auto;
+            overflow-y: auto;
+            height: 70vh;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            scrollbar-width: thin;
+            scrollbar-color: #ff66b2 #ffccff;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .photo {
+            position: relative;
+            width: 180px;
+            height: 220px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .photo p {
+            font-size: 14px;
+            color: #ff3399;
+            font-weight: bold;
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .photo:hover {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .back-btn {
+            display: block;
+            background: #ff3399;
+            color: white;
+            padding: 12px 25px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px auto;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 2px 2px 10px #cc0052;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        .back-btn:hover {
+            background: #cc0052;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 20px;
+            color: red;
+            animation: floatHearts 5s infinite ease-in-out;
+        }
+
+        @keyframes floatHearts {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-50px) scale(1.2); opacity: 0.8; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🐻✨ Our Magical Memories 💖🎀</h1>
+    <p class="cute-symbols">💓✨🐰🎀💖🍓💌🌸🌈</p>
+
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="photo">
+                <img src="memory1.jpg" alt="Memory 1">
+                <p>🥰 Best Day Ever!</p>
+            </div>
+            <div class="photo">
+                <img src="memory2.jpg" alt="Memory 2">
+                <p>🌸 Sweet Moments</p>
+            </div>
+            <div class="photo">
+                <img src="memory3.jpg" alt="Memory 3">
+                <p>🎀 Cute & Cuddly</p>
+            </div>
+            <div class="photo">
+                <img src="memory4.jpg" alt="Memory 4">
+                <p>✨ Dreamy Vibes</p>
+            </div>
+            <div class="photo">
+                <img src="memory5.jpg" alt="Memory 5">
+                <p>💖 Forever Love</p>
+            </div>
+            <div class="photo">
+                <img src="memory6.jpg" alt="Memory 6">
+                <p>🌈 Pure Happiness</p>
+            </div>
+            <div class="photo">
+                <img src="memory7.jpg" alt="Memory 7">
+                <p>🎂 Special Day</p>
+            </div>
+            <div class="photo">
+                <img src="memory8.jpg" alt="Memory 8">
+                <p>💕 Always Together</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">⬅ Go Back 🎀</a>
+
+    <script>
+        function createFloatingHearts() {
+            setInterval(() => {
+                let heart = document.createElement("div");
+                heart.className = "floating-heart";
+                heart.innerHTML = "❤️";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.top = "90vh";
+                heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+                heart.style.fontSize = Math.random() * 20 + 10 + "px";
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }, 300);
+        }
+
+        createFloatingHearts();
+    </script>
+
+</body>
+</html>
